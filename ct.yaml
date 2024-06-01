@@ -1,0 +1,38 @@
+# See https://github.com/helm/chart-testing
+
+# note: all the values files in ci/*-values.yaml will
+#       be tested automatically. For each configuration,
+#       all the tests in templates/tests/*.yaml
+#       will be checked.
+
+debug: true
+
+################################################
+# github
+################################################
+
+remote: origin
+
+################################################
+# chart
+################################################
+
+charts:
+  - ./
+chart-dirs:
+  - ./
+chart-repos:
+  - bitnami=https://charts.bitnami.com/bitnami
+  - nginx=https://helm.nginx.com/stable
+
+namespace: example
+release-label: chart-template
+
+################################################
+# checks and validations
+################################################
+
+validate-maintainers: false
+validate-chart-schema: true
+validate-yaml: false
+# check-version-increment: true 
